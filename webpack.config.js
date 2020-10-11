@@ -1,6 +1,7 @@
 const path = require("path");
 const webpack = require("webpack");
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
+// import webpack manifest after npm i this library
 const WebpackPwaManifest = require("webpack-pwa-manifest");
 
 module.exports = {
@@ -45,6 +46,7 @@ module.exports = {
         new BundleAnalyzerPlugin({
             analyserMode: "static", // the report outputs to an HTML file in the dist folder
         }),
+        // incorporate the webpack manifest then add link in index.html
         new WebpackPwaManifest({
             name: "Food Event",
             short_name: "Foodies",
